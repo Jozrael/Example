@@ -1,12 +1,12 @@
---KDM Level Marker for Hunt
+--KDM Level Marker for Showdown
 
 -------------------------
 --variables
 ---------------------------
 
-level1guid = '8c918d'
-level2guid = '844c0e'
-level3guid = '5ffbab'
+level1guid = 'd55917'
+level2guid = 'c0087a'
+level3guid = '6d5b9b'
 -----------------------
 --init
 ------------------------
@@ -25,13 +25,13 @@ function onCollisionEnter(info)
 		local level = ''
 		if guid == level1guid then
 			level = 'lvl1'
-			changeHuntLevel(level)
+			changeShowdownLevel(level)
 		elseif guid == level2guid then
 			level = 'lvl2'
-			changeHuntLevel(level)
+			changeShowdownLevel(level)
 		elseif guid == level3guid then
 			level = 'lvl3'
-			changeHuntLevel(level)
+			changeShowdownLevel(level)
 		end
 	end
 end
@@ -41,6 +41,6 @@ end
 --Global Calls
 ------------------------
 
-function changeHuntLevel(level)
-	Global.call('changeHuntLevel', {level})
+function changeShowdownLevel(level)
+	Global.call('changeShowdownLevel', {level})
 end

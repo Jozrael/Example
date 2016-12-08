@@ -458,7 +458,7 @@ function editclick(location)
 	end
     button = nil
     fname = tostring(location) .. 'EditClick'
-    ppos = {pos.x + 0.5, pos.y, pos.z}
+    ppos = {pos.x + 2, pos.y, pos.z}
     if (objs[nm] != nil) then
         buttons.counts[nm] = objs[nm].getDescription()
 		if nm == '__survivor_name' then

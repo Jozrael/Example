@@ -1,3 +1,0 @@
---TODO: placeholder file for dist folder
---TODO: REMOVE this file when release is ready to publish
---TODO: PUT release files in the dist directory, and package the dist directory for workshop distribution

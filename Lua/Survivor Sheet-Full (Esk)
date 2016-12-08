@@ -9,50 +9,52 @@ function initCustomButtons()
 	thick = 0.14
 
 	--minimize button
-	dx = 6.1; dy = -12.1
+	dx = 4.3; dy = -12
 	createMinimize('minimize', 'collapse', dx, dy)
-
+		
 	--header
-	dx = -1; dy =-11.5
+	dx = 0; dy =-11.8
 	createTextField('survivor_name', 'txtbig', dx, dy)
-
-	dx =7.45; dy =-11.27; px = 1.25
+	
+	dx =-4.65 ; dy =-11.25; px = 0.53
 	createToggle('gender_m', dx, dy); dx = dx + px;
 	createToggle('gender_f', dx, dy)
-
+	
 	--survival
-	dx = -5.265; dy =2
+	dx = -4.35; dy =-9.8 
 	createCounter('survival', 'big', dx, dy)
-
-	dx = -7.73; dy = 2
-	createCounter('survival_limit', 'big', dx, dy)
-
-	--dx = -2.48; dy = -9.25
-	--createToggle('survival_disabled', dx, dy)
-
-	dx = -3.365; dy = 0.525; py = 0.925
-    createToggle('dodge', dx, dy); dy = dy + py;
+	
+	dx = -3.2; dy = -9.25
+	createCounter('survival_limit', 'mid', dx, dy)
+	
+	dx = -2.48; dy = -9.25
+	createToggle('survival_disabled', dx, dy)
+	
+	dx = -0.78; dy = -10.48; py = 0.4
+	createToggle('dodge', dx, dy); dy = dy + py;
 	createToggle('encourage', dx, dy); dy = dy + py;
 	createToggle('surge', dx, dy); dy = dy + py;
 	createToggle('dash', dx, dy)
-
+	
 	--stats
-	dx = -7.45; dy = -3.4; px = 3
-	createCounter('movement', 'bigAttr', dx, dy) dx = dx + px;
-	createCounter('accuracy', 'bigAttr', dx, dy) dx = dx + px - 0.05;
-	createCounter('strength', 'bigAttr', dx, dy) dx = dx + px - 0.02;
-	createCounter('evasion', 'bigAttr', dx, dy) dx = dx + px - 0.1;
-	createCounter('luck', 'bigAttr', dx, dy) dx = dx + px;
-	createCounter('speed', 'bigAttr', dx, dy)
-
+	dx = -4.33; dy = -7.7
+	createCounter('movement', 'big', dx, dy)
+	
+	dx = -2.98; dy = -7.8 ; px = 1.27
+	createCounter('accuracy', 'mid', dx, dy) dx = dx + px;
+	createCounter('strength', 'mid', dx, dy) dx = dx + px;
+	createCounter('evasion', 'mid', dx, dy) dx = dx + px;
+	createCounter('luck', 'mid', dx, dy) dx = dx + px;
+	createCounter('speed', 'mid', dx, dy)
+	
 	--insanity
-	dx = 4.55; dy = 1.9
+	dx = 3.93; dy = -9.1
 	createCounter('insanity', 'big', dx, dy)
-	dx = 4.55; dy = 3.6
+	dx = 4.985; dy = -9.65
 	createToggle('brain_injury', dx, dy)
-
+	
 	--experience
-	dx = -8.5; dy = -9.1; px = 0.665
+	dx = -3.17; dy = -6.05; px = 0.513
 	createToggle('xp_1', dx, dy); dx = dx + px;
 	createToggle('xp_2', dx, dy); dx = dx + px;
 	createToggle('xp_3', dx, dy); dx = dx + px;
@@ -69,15 +71,15 @@ function initCustomButtons()
 	createToggle('xp_14', dx, dy); dx = dx + px;
 	createToggle('xp_15', dx, dy); dx = dx + px;
 	createToggle('xp_16', dx, dy)
-
-	--dx = 4.94; dy = -6.9
-	--createToggle('no_hunt', dx, dy)
-
+	
+	dx = 4.94; dy = -6.9
+	createToggle('no_hunt', dx, dy)
+	
 	--skills
-	dx = 6; dy =-9.1
+	dx = -1.65; dy =-3.45
 	createTextField('proficiency_type', 'txt', dx, dy)
-
-	dx = 3.645; dy = -8.01; px = 0.667
+	
+	dx = 1.038; dy = -4.1; px = 0.494
 	createToggle('proficiency_1', dx, dy); dx = dx + px;
 	createToggle('proficiency_2', dx, dy); dx = dx + px;
 	createToggle('proficiency_3', dx, dy); dx = dx + px;
@@ -86,8 +88,8 @@ function initCustomButtons()
 	createToggle('proficiency_6', dx, dy); dx = dx + px;
 	createToggle('proficiency_7', dx, dy); dx = dx + px;
 	createToggle('proficiency_8', dx, dy)
-
-	dx = -7.65; dy = 5.68; px =0.715
+	
+	dx = -4.43; dy = -1.65; px =0.473
 	createToggle('courage_1', dx, dy); dx = dx + px;
 	createToggle('courage_2', dx, dy); dx = dx + px;
 	createToggle('courage_3', dx, dy); dx = dx + px;
@@ -97,8 +99,8 @@ function initCustomButtons()
 	createToggle('courage_7', dx, dy); dx = dx + px;
 	createToggle('courage_8', dx, dy); dx = dx + px;
 	createToggle('courage_9', dx, dy)
-
-	dx = 1.78; dy = 5.68; px =0.719
+	
+	dx = 0.64; dy = -1.65; px =0.473
 	createToggle('understanding_1', dx, dy); dx = dx + px;
 	createToggle('understanding_2', dx, dy); dx = dx + px;
 	createToggle('understanding_3', dx, dy); dx = dx + px;
@@ -108,30 +110,123 @@ function initCustomButtons()
 	createToggle('understanding_7', dx, dy); dx = dx + px;
 	createToggle('understanding_8', dx, dy); dx = dx + px;
 	createToggle('understanding_9', dx, dy)
-
-	dx = -8.63; dy = 7.28; py = 0.71
+	
+	dx = -4.43; dy = 0; py = 0.87
 	createToggle('stalwart', dx, dy); dy = dy + py;
 	createToggle('prepared', dx, dy); dy = dy + py;
 	createToggle('matchmaker', dx, dy)
-
-	dx = 0.8; dy = 7.28; py = 0.71
+	
+	dx = 0.6; dy = 0; py = 0.87
 	createToggle('analyze', dx, dy); dy = dy + py;
 	createToggle('explore', dx, dy); dy = dy + py;
 	createToggle('tinker', dx, dy)
+	
+	--conditions
+	dx = -2.5; dy = 3.77; py = 1.46
+	createTextField('impairments', 'txt2', dx, dy); dy = dy + py
+	createTextField('disorders', 'txt2', dx, dy); dy = dy + py
+	createTextField('fighting_arts', 'txt2', dx, dy)
+	
+	dx = -0.2; dy = 6
+	createToggle('disable_fightingarts', dx , dy)
+	
+	dx = -2.5; dy = 9.5; px = 5
+	createTextField('abilities', 'txt3', dx, dy); dx = dx + px
+	
+	
+	dx = 4.73; dy = 3.66; px =0.36; py =0.38; rx = dx
+	createToggle('intracranial_hemorrhage', dx, dy); dy = dy + py;
+	createToggle('deaf', dx, dy); dy = dy + py;
+	createToggle('blind_1', dx, dy); dx = dx - px;
+	createToggle('blind_2', dx, dy); dx = rx;dy = dy + py
+	createToggle('shattered_jaw', dx, dy);
 
-	dx = 4.63; dy = 10.18; py = 0.71
-	createToggle('skip', dx, dy); dy = dy + py;
-	createToggle('survival', dx, dy); dy = dy + py;
-	createToggle('fightingarts', dx, dy)
-
-
-	dx = -2.5; dy = 11; px = 5
-	createTextField('notes', 'txt3', dx, dy); dx = dx + px
-
+	dx = 4.73; dy = 5.44; px =0.36; py =0.38; rx = dx
+	createToggle('dismembered_arm_1', dx, dy); dx = dx - px;
+	createToggle('dismembered_arm_2', dx, dy); dx = rx; dy = dy + py
+	createToggle('ruptured_muscle', dx, dy); dy = dy + py;
+	createToggle('contracture_1', dx, dy); dx = dx - px;
+	createToggle('contracture_2', dx, dy); dx = dx - px;
+	createToggle('contracture_3', dx, dy); dx = dx - px;
+	createToggle('contracture_4', dx, dy); dx = dx - px;
+	createToggle('contracture_5', dx, dy); dx = rx;dy = dy + py
+	createToggle('broken_arm_1', dx, dy); dx = dx - px
+	createToggle('broken_arm_2', dx, dy); dx = dx - px
+	
+	dx = 4.73; dy = 7.22; px =0.36; py =0.38; rx = dx
+	createToggle('gaping_chest_wound_1', dx, dy); dx = dx - px;
+	createToggle('gaping_chest_wound_2', dx, dy); dx = dx - px;
+	createToggle('gaping_chest_wound_3', dx, dy); dx = dx - px;
+	createToggle('gaping_chest_wound_4', dx, dy); dx = dx - px;
+	createToggle('gaping_chest_wound_5', dx, dy); dx = rx;dy = dy + py
+	createToggle('destroyed_back', dx, dy); dx = rx; dy = dy + py
+	createToggle('broken_rib_1', dx, dy); dx = dx - px;
+	createToggle('broken_rib_2', dx, dy); dx = dx - px;
+	createToggle('broken_rib_3', dx, dy); dx = dx - px;
+	createToggle('broken_rib_4', dx, dy); dx = dx - px;
+	createToggle('broken_rib_5', dx, dy)
+	
+	dx = 4.73; dy = 8.6; px =0.36; py =0.38; rx = dx
+	createToggle('intestinal_prolapse', dx, dy); dy = dy + py
+	createToggle('warped_pelvis_1', dx, dy); dx = dx - px;
+	createToggle('warped_pelvis_2', dx, dy); dx = dx - px;
+	createToggle('warped_pelvis_3', dx, dy); dx = dx - px;
+	createToggle('warped_pelvis_4', dx, dy); dx = dx - px;
+	createToggle('warped_pelvis_5', dx, dy); dx = rx;dy = dy + py
+	createToggle('destroyed_genitals', dx, dy); dy = dy + py
+	createToggle('broken_hip', dx, dy)
+	
+	dx = 4.73; dy = 10.38; px =0.36; py =0.38; rx = dx
+	createToggle('dismembered_leg_1', dx, dy); dx = dx - px;
+	createToggle('dismembered_leg_2', dx, dy); dx = rx;dy = dy + py
+	createToggle('hamstrung', dx, dy); dy = dy + py
+	createToggle('broken_leg_1', dx, dy); dx = dx - px;
+	createToggle('broken_leg_2', dx, dy)
+	
 	--------------------
 	--backside buttons
 	-------------------
 	thick = -0.14
+	--header
+	dx = 0; dy =-11.8
+	createTextField('b_survivor_name', 'txtbig', dx, dy)
+	
+	dx =-4.475 ; dy =-11.8; px = -0.525
+	createToggle('b_gender_m', dx, dy); dx = dx + px;
+	createToggle('b_gender_f', dx, dy)
+	
+	--chronicles
+	dx = -1; dy = -9.3; py = 0.9
+	createCounter('b_year_born', 'mid', dx, dy); dy = dy + py
+	createCounter('b_year_died', 'mid', dx, dy)
+
+	dx = -3.8; dy =-9
+	createCounter('b_age', 'big', dx, dy)
+	
+	dx = 0; dy = -7.5
+	createTextField('b_cause_death', 'txt4', dx, dy)
+	
+	--family
+	dx = 2.5; dy = -5; px = 5; py = 1.02
+	createTextField('b_parent_1', 'txt', dx, dy); dx = dx - px
+	createTextField('b_parent_2', 'txt', dx, dy); dx = 0; dy = dy + py
+	createTextField('b_fam_self', 'txt', dx, dy); dx = 2.5; dy = dy + py
+	createTextField('b_child_1', 'txt', dx, dy); dx = dx - px
+	createTextField('b_child_2', 'txt', dx, dy); dx = 2.5; dy = dy + py
+	createTextField('b_child_3', 'txt', dx, dy); dx = dx - px
+	createTextField('b_child_4', 'txt', dx, dy); dx = 2.5; dy = dy + py
+	createTextField('b_child_5', 'txt', dx, dy); dx = dx - px
+	createTextField('b_child_6', 'txt', dx, dy)
+	
+	--freetext etc
+	dx = 0; dy = 1.3
+	createTextField('b_mates', 'txt2', dx, dy)
+	
+	dx = 0; dy = 5.1
+	createTextField('b_deeds', 'txt3', dx, dy)
+	
+	dx = 0; dy = 9.8
+	createTextField('b_notes', 'txt3', dx, dy)
 	
 
     --if you added a location, you need to give it a position, coordinates are relative to the center of the model
@@ -157,15 +252,10 @@ function initButtonsTable()
 	
 	--make a style of button by adding a new size
 	buttons.params.sizes.collapse = {
-        display = {width = 250, height = 250, font = 250},
+        display = {width = 450, height = 450, font = 450},
         button = {width = 0, height = 0, font = 100},
         offsets = { bottomButtons = {x = 0, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
 	}
-    buttons.params.sizes.std = {
-        display = {width = 200, height = 150, font = 100},
-        button = {width = 100, height = 100, font = 100},
-        offsets = { bottomButtons = {x = 0.3, y = 0, z = 0}, topButtons = {x = 0.1, y = 0, z = -0.17} }
-    }
     buttons.params.sizes.mid = {
         display = {width = 0, height = 0, font = 400},
         button = {width = 150, height = 200, font = 200},
@@ -173,57 +263,35 @@ function initButtonsTable()
     }
     buttons.params.sizes.big = {
         display = {width = 0, height = 0, font = 800},
-        button = {width = 280, height = 280, font = 400},
-        offsets = { bottomButtons = {x = 0.42, y = 0, z = -1.63}}
-    }
-    buttons.params.sizes.bigAttr = {
-        display = {width = 0, height = 0, font = 1200},
-        button = {width = 280, height = 280, font = 400},
-        offsets = { bottomButtons = {x = 0.425, y = 0, z = -1.82}}
-    }
-    buttons.params.sizes.small = {
-        display = {width = 0, height = 0, font = 80},
-        button = {width = 100, height = 100, font = 100},
-        offsets = { bottomButtons = {x = 0.2, y = 0, z = 0}, topButtons = {x = 0.1, y = 0, z = -0.1} }
+        button = {width = 180, height = 250, font = 400},
+        offsets = { bottomButtons = {x = 0.5, y = 0, z = -0.5}, topButtons = {x = 0.1, y = 0, z = -0.17} }
     }
     buttons.params.sizes.toggle = {
-        display = {width = 150, height = 150, font = 300},
-        button = {width = 200, height = 200, font = 300},
+        display = {width = 150, height = 150, font = 200},
+        button = {width = 200, height = 200, font = 200},
         offsets = { bottomButtons = {x = 0, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
     }
-
-    buttons.params.sizes.genderToggle = {
-        display = {width = 300, height = 300, font = 300},
-        button = {width = 200, height = 200, font = 300},
-        offsets = { bottomButtons = {x = 0, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
-    }
-
     buttons.params.sizes.txt = {
-        display = {width = 0, height = 0, font = 300},
-        button = {width = 400, height = 250, font = 150},
-        offsets = { bottomButtons = {x = 2.5, y = 0, z = -0.5}, topButtons = {x = 0, y = 0, z = 0} }
+        display = {width = 0, height = 0, font = 150},
+        button = {width = 300, height = 200, font = 100},
+        offsets = { bottomButtons = {x = 2, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
     }
-
     buttons.params.sizes.txt2 = {
         display = buttons.params.sizes.txt.display, button = buttons.params.sizes.txt.button,
         offsets = { bottomButtons = {x = 0, y = 0, z = -0.68}, topButtons = {x = 0, y = 0, z = 0} }
     }
     buttons.params.sizes.txt3 = {
         display = buttons.params.sizes.txt.display, button = buttons.params.sizes.txt.button,
-        offsets = { bottomButtons = {x = 5.3, y = 0, z = -0.7}, topButtons = {x = 0, y = 0, z = 0} }
+        offsets = { bottomButtons = {x = 0, y = 0, z = -2}, topButtons = {x = 0, y = 0, z = 0} }
     }
 	buttons.params.sizes.txt4 = {
         display = buttons.params.sizes.txt.display, button = buttons.params.sizes.txt.button,
         offsets = { bottomButtons = {x = 4.4, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
     }
-	buttons.params.sizes.txt5 = {
-        display = buttons.params.sizes.txt.display, button = buttons.params.sizes.txt.button,
-        offsets = { bottomButtons = {x = 4.4, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
-    }
     buttons.params.sizes.txtbig = {
-        display = {width = 0, height = 0, font = 450},
+        display = {width = 0, height = 0, font = 300},
         button = buttons.params.sizes.txt.button,
-        offsets = { bottomButtons = {x = 6, y = 0, z = 0.5}, topButtons = {x = 0, y = 0, z = 0} }
+        offsets = { bottomButtons = {x = 3.8, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
     }
     buttons.params.sizes.txtbig2 = {
         display = {width = 0, height = 0, font = 300},
@@ -254,13 +322,6 @@ end
 ----------------------------------------------------
 --INIT
 ----------------------------------------------------
-
--------------curnils tokens standalone
---used to determine if collision(enter/exit) is Full Char Sheet
-isKDMFULL = true
-tokens = {}
-tempStats = {}
---------------
 
 --loads buttons and gets saved data
 function onload(saved_data)
@@ -429,14 +490,7 @@ function updateDisplay(firstTime)
                         buttons[tostring(i)].minusOne.label = "Done"
                     end
                 else
-					--curnil token script
-					if i == "movement" or i == "accuracy" or i == "strength" or i == "evasion" or i == "luck" or i == "speed"then
-                        buttons[tostring(i)].display.label = tostring(buttons.counts[tostring(i)])
-                        updateStat(i)
-                    else
-					--
                     buttons[tostring(i)].display.label = tostring(buttons.counts[tostring(i)])
-					end
                 end
             end
             if (firstTime) then
@@ -586,45 +640,4 @@ function onDropped()
 	end
 	saved_data = JSON.encode(data_to_save)
 	self.script_state = saved_data
-end
-
-
-
-
----------------------------
---Curnils token standalone script version
----------------------------
---Curnil's Token scripts
-function loadTokens(loadedTokens)
-    tokens = loadedTokens
-    updateDisplay(false)
-end
-
-function updateStat(stat)
-    local statIncrease = 0
-    for i,v in pairs(tokens) do
-        for j,w in pairs(v) do
-            if stat == "movement" and tostring(j) == "move" then
-                statIncrease = statIncrease + w
-            elseif stat == j then
-                statIncrease = statIncrease + w
-            end
-        end
-    end
-    buttons[stat].display.label = tostring(statIncrease + buttons.counts[stat])
-    loadComplete = true
-end
-
-function onCollisionExit(collision_info)
-    local obj = collision_info.collision_object
-    if obj.getVar("isGearGrid") then
-        -- remove the token from the tokens collection
-        tokens = {}
-        updateDisplay(false)
-    end
-end
-
-function onPickedUp()
-	tokens = {}
-	updateDisplay(false)
 end
