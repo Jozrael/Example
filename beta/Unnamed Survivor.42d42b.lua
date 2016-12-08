@@ -1,4 +1,4 @@
---KDM Survivor Sheet-Mini (Slate) v.3
+--KDM Survivor Sheet-Full (Slate) v.3
 --by Eskander and Curnil
 --Script adapted from soulburner's dnd sheets and Mr. Stumps Universal Counter Tokens
 
@@ -8,20 +8,51 @@
 function initCustomButtons()
 	thick = 0.14
 
-	--maximize button
-	dx = 6; dy = -2.5
-	createMaximize('minimize', 'collapse', dx, dy)
+	--minimize button
+	dx = 6.1; dy = -12.1
+	createMinimize('minimize', 'collapse', dx, dy)
 
 	--header
-	dx = -1; dy =-1.9
+	dx = -1; dy =-11.5
 	createTextField('survivor_name', 'txtbig', dx, dy)
 
-	dx =7.45 ; dy =-1.555; px = 1.25
+	dx =7.45; dy =-11.27; px = 1.25
 	createToggle('gender_m', dx, dy); dx = dx + px;
 	createToggle('gender_f', dx, dy)
 
+	--survival
+	dx = -5.265; dy =2
+	createCounter('survival', 'big', dx, dy)
+
+	dx = -7.73; dy = 2
+	createCounter('survival_limit', 'big', dx, dy)
+
+	--dx = -2.48; dy = -9.25
+	--createToggle('survival_disabled', dx, dy)
+
+	dx = -3.365; dy = 0.525; py = 0.925
+    createToggle('dodge', dx, dy); dy = dy + py;
+	createToggle('encourage', dx, dy); dy = dy + py;
+	createToggle('surge', dx, dy); dy = dy + py;
+	createToggle('dash', dx, dy)
+
+	--stats
+	dx = -7.45; dy = -3.4; px = 3
+	createCounter('movement', 'bigAttr', dx, dy) dx = dx + px;
+	createCounter('accuracy', 'bigAttr', dx, dy) dx = dx + px - 0.05;
+	createCounter('strength', 'bigAttr', dx, dy) dx = dx + px - 0.02;
+	createCounter('evasion', 'bigAttr', dx, dy) dx = dx + px - 0.1;
+	createCounter('luck', 'bigAttr', dx, dy) dx = dx + px;
+	createCounter('speed', 'bigAttr', dx, dy)
+
+	--insanity
+	dx = 4.55; dy = 1.9
+	createCounter('insanity', 'big', dx, dy)
+	dx = 4.55; dy = 3.6
+	createToggle('brain_injury', dx, dy)
+
 	--experience
-	dx = -8.5; dy = 0.58; px = 0.665
+	dx = -8.5; dy = -9.1; px = 0.665
 	createToggle('xp_1', dx, dy); dx = dx + px;
 	createToggle('xp_2', dx, dy); dx = dx + px;
 	createToggle('xp_3', dx, dy); dx = dx + px;
@@ -39,11 +70,14 @@ function initCustomButtons()
 	createToggle('xp_15', dx, dy); dx = dx + px;
 	createToggle('xp_16', dx, dy)
 
+	--dx = 4.94; dy = -6.9
+	--createToggle('no_hunt', dx, dy)
+
 	--skills
-	dx = 5.8; dy =0.5
+	dx = 6; dy =-9.1
 	createTextField('proficiency_type', 'txt', dx, dy)
 
-	dx = 3.65; dy = 1.66; px = 0.665
+	dx = 3.645; dy = -8.01; px = 0.667
 	createToggle('proficiency_1', dx, dy); dx = dx + px;
 	createToggle('proficiency_2', dx, dy); dx = dx + px;
 	createToggle('proficiency_3', dx, dy); dx = dx + px;
@@ -53,19 +87,62 @@ function initCustomButtons()
 	createToggle('proficiency_7', dx, dy); dx = dx + px;
 	createToggle('proficiency_8', dx, dy)
 
+	dx = -7.65; dy = 5.68; px =0.715
+	createToggle('courage_1', dx, dy); dx = dx + px;
+	createToggle('courage_2', dx, dy); dx = dx + px;
+	createToggle('courage_3', dx, dy); dx = dx + px;
+	createToggle('courage_4', dx, dy); dx = dx + px;
+	createToggle('courage_5', dx, dy); dx = dx + px;
+	createToggle('courage_6', dx, dy); dx = dx + px;
+	createToggle('courage_7', dx, dy); dx = dx + px;
+	createToggle('courage_8', dx, dy); dx = dx + px;
+	createToggle('courage_9', dx, dy)
+
+	dx = 1.78; dy = 5.68; px =0.719
+	createToggle('understanding_1', dx, dy); dx = dx + px;
+	createToggle('understanding_2', dx, dy); dx = dx + px;
+	createToggle('understanding_3', dx, dy); dx = dx + px;
+	createToggle('understanding_4', dx, dy); dx = dx + px;
+	createToggle('understanding_5', dx, dy); dx = dx + px;
+	createToggle('understanding_6', dx, dy); dx = dx + px;
+	createToggle('understanding_7', dx, dy); dx = dx + px;
+	createToggle('understanding_8', dx, dy); dx = dx + px;
+	createToggle('understanding_9', dx, dy)
+
+	dx = -8.63; dy = 7.28; py = 0.71
+	createToggle('stalwart', dx, dy); dy = dy + py;
+	createToggle('prepared', dx, dy); dy = dy + py;
+	createToggle('matchmaker', dx, dy)
+
+	dx = 0.8; dy = 7.28; py = 0.71
+	createToggle('analyze', dx, dy); dy = dy + py;
+	createToggle('explore', dx, dy); dy = dy + py;
+	createToggle('tinker', dx, dy)
+
+	dx = 4.63; dy = 10.18; py = 0.71
+	createToggle('skip', dx, dy); dy = dy + py;
+	createToggle('survival', dx, dy); dy = dy + py;
+	createToggle('fightingarts', dx, dy)
+
+
+	dx = -2.5; dy = 11; px = 5
+	createTextField('notes', 'txt3', dx, dy); dx = dx + px
+
+	--------------------
+	--backside buttons
+	-------------------
+	thick = -0.14
+	
+
     --if you added a location, you need to give it a position, coordinates are relative to the center of the model
     --buttons.params.positions.test = {x = 1, y = 1, z = 1}
+
 end
 
-function onSave()
-    --Uncomment this line to reset the save data, necessary when messing with variable names
-    --saved_data = ''
-    return saved_data
-end
+------------------
+--Style Sheet
+------------------
 
-------------------------------
---Style sheet
-------------------------------
 function initButtonsTable()
 
     buttons = {}
@@ -86,40 +163,45 @@ function initButtonsTable()
 	}
     buttons.params.sizes.std = {
         display = {width = 200, height = 150, font = 100},
-        button = {width = 0, height = 0, font = 100},
+        button = {width = 100, height = 100, font = 100},
         offsets = { bottomButtons = {x = 0.3, y = 0, z = 0}, topButtons = {x = 0.1, y = 0, z = -0.17} }
     }
     buttons.params.sizes.mid = {
         display = {width = 0, height = 0, font = 400},
-        button = {width = 0, height = 0, font = 200},
+        button = {width = 150, height = 200, font = 200},
         offsets = { bottomButtons = {x = 0.28, y = 0, z = -0.3}, topButtons = {x = 0.1, y = 0, z = -0.17} }
     }
     buttons.params.sizes.big = {
         display = {width = 0, height = 0, font = 800},
-        button = {width = 0, height = 0, font = 400},
-        offsets = { bottomButtons = {x = 0.5, y = 0, z = -0.5}, topButtons = {x = 0.1, y = 0, z = -0.17} }
+        button = {width = 280, height = 280, font = 400},
+        offsets = { bottomButtons = {x = 0.42, y = 0, z = -1.63}}
+    }
+    buttons.params.sizes.bigAttr = {
+        display = {width = 0, height = 0, font = 1200},
+        button = {width = 280, height = 280, font = 400},
+        offsets = { bottomButtons = {x = 0.425, y = 0, z = -1.82}}
     }
     buttons.params.sizes.small = {
         display = {width = 0, height = 0, font = 80},
-        button = {width = 0, height = 0, font = 100},
+        button = {width = 100, height = 100, font = 100},
         offsets = { bottomButtons = {x = 0.2, y = 0, z = 0}, topButtons = {x = 0.1, y = 0, z = -0.1} }
     }
     buttons.params.sizes.toggle = {
-        display = {width = 0, height = 0, font = 300},
-        button = {width = 0, height = 0, font = 300},
+        display = {width = 150, height = 150, font = 300},
+        button = {width = 200, height = 200, font = 300},
         offsets = { bottomButtons = {x = 0, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
     }
 
     buttons.params.sizes.genderToggle = {
-        display = {width = 0, height = 0, font = 400},
-        button = {width = 0, height = 0, font = 400},
+        display = {width = 300, height = 300, font = 300},
+        button = {width = 200, height = 200, font = 300},
         offsets = { bottomButtons = {x = 0, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
     }
 
     buttons.params.sizes.txt = {
-        display = {width = 0, height = 0, font = 150},
-        button = {width = 0, height = 0, font = 100},
-        offsets = { bottomButtons = {x = 2, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
+        display = {width = 0, height = 0, font = 300},
+        button = {width = 400, height = 250, font = 150},
+        offsets = { bottomButtons = {x = 2.5, y = 0, z = -0.5}, topButtons = {x = 0, y = 0, z = 0} }
     }
 
     buttons.params.sizes.txt2 = {
@@ -128,7 +210,7 @@ function initButtonsTable()
     }
     buttons.params.sizes.txt3 = {
         display = buttons.params.sizes.txt.display, button = buttons.params.sizes.txt.button,
-        offsets = { bottomButtons = {x = 0, y = 0, z = -2}, topButtons = {x = 0, y = 0, z = 0} }
+        offsets = { bottomButtons = {x = 5.3, y = 0, z = -0.7}, topButtons = {x = 0, y = 0, z = 0} }
     }
 	buttons.params.sizes.txt4 = {
         display = buttons.params.sizes.txt.display, button = buttons.params.sizes.txt.button,
@@ -139,9 +221,9 @@ function initButtonsTable()
         offsets = { bottomButtons = {x = 4.4, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
     }
     buttons.params.sizes.txtbig = {
-        display = {width = 0, height = 0, font = 300},
+        display = {width = 0, height = 0, font = 450},
         button = buttons.params.sizes.txt.button,
-        offsets = { bottomButtons = {x = 3.8, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
+        offsets = { bottomButtons = {x = 6, y = 0, z = 0.5}, topButtons = {x = 0, y = 0, z = 0} }
     }
     buttons.params.sizes.txtbig2 = {
         display = {width = 0, height = 0, font = 300},
@@ -150,50 +232,44 @@ function initButtonsTable()
     }
 end
 
----------------------------------------------------------------
+----------------------------------------------------
 --DO NO EDIT BELOW unless you know what you're doing
---SAVE/LOAD
----------------------------------------------------------------
---[[
+--SAVE
+----------------------------------------------------
+
+--Saves the count value into a table (data_to_save) then encodes it into the Tabletop save
 function onSave()
-	--unbracket this block to reset saved data
-	saved_data = ''
+	local data_to_save = {}
+	data_to_save.saved_counts = {}
+	for i,v in pairs(buttons.counts) do
+		data_to_save.saved_counts[tostring(i)] = v or 0
+	end
+	saved_data = JSON.encode(data_to_save)
+	
+	--Uncomment this line to reset the save data
+	--saved_data = ''
 	return saved_data
 end
---]]
 
--------------------------------
---loading from full size
---------------------------------
-function loadData(dataToLoad)
-	for i,v in pairs(buttons) do
-        if tostring(i) != 'index' and tostring(i) != 'counts' and tostring(i) != 'params' and tostring(i) != 'targetFunc' and tostring(i) != 'm_minimize' and tostring != 'm_maximize' then
-            buttons.counts[tostring(i)] = dataToLoad.saved_counts[tostring(i)]
-        end
-    end
-	saved_data = JSON.encode(dataToLoad)
-	self.script_state = saved_data
-	startLuaCoroutine(self, 'updateAfterLoad')
-end
-
-function updateAfterLoad()
-	for i = 1, 5 do
-		coroutine.yield(0)
-	end
-	updateDisplay(false)
-	return 1
-end
-
-------------------------------------------------
+----------------------------------------------------
 --INIT
-------------------------------------------------
+----------------------------------------------------
 
+-------------curnils tokens standalone
+--used to determine if collision(enter/exit) is Full Char Sheet
+isKDMFULL = true
+tokens = {}
+tempStats = {}
+--------------
+
+--loads buttons and gets saved data
 function onload(saved_data)
     original_rot = {['x'] = 0,['y'] = 180,['z'] = 0}
     initButtonsTable()
     objs = {}
 	initCustomButtons()
 	
+	--categorize buttons
     for i,v in pairs(buttons) do
         buttons.counts[tostring(i)] = 0
         if tostring(i) != 'index' and tostring(i) != 'counts' and tostring(i) != 'params' and tostring(i) != 'targetFunc' then
@@ -205,21 +281,10 @@ function onload(saved_data)
 			self.setVar(tostring(i) .. 'Maximize', function () maximizeSheet(tostring(i)) end)
         end
     end
-	
     generateButtonParameters()
 
-    --loads existing data
-	if saved_data != '' and saved_data != nil then
-        local loaded_data = JSON.decode(saved_data)
-        buttons.counts = loaded_data.saved_counts
-        for i,v in pairs(buttons) do
-            if tostring(i) != 'index' and tostring(i) != 'counts' and tostring(i) != 'params'  and tostring(i) != 'targetFunc' then
-                if buttons.counts[tostring(i)] == nil then
-                    buttons.counts[tostring(i)] = 0
-                end
-            end
-        end
-    elseif saved_data != '' then
+    --loads saved data if exists
+    if saved_data != '' then
         local loaded_data = JSON.decode(saved_data)
         buttons.counts = loaded_data.saved_counts
         for i,v in pairs(buttons) do
@@ -236,7 +301,8 @@ function onload(saved_data)
             end
         end
     end
-
+	
+	--update display
     updateDisplay(true)
 end
 
@@ -255,7 +321,7 @@ end
 
 function createTextField(sname, type, px, py)
     name = '__' .. sname;
-    buttons[name] = { type = type }
+    buttons[name] = {type = type }
     buttons.params.positions[name] = {x = px, y = thick, z = py}
 end
 
@@ -274,6 +340,7 @@ end
 function dud()
 end
 
+--gets buttons params
 function generateButtonParameters()
     for i,v in pairs(buttons) do
         if tostring(i) != 'index' and tostring(i) != 'counts' and tostring(i) != 'params' and tostring(i) != 'targetFunc' then
@@ -291,8 +358,8 @@ function generateButtonParameters()
 				buttons[tostring(i)].isMaximize = true
             elseif (prefix != "t_") then
                 buttons[tostring(i)].display = setupButton(tostring(i) .. 'dud', buttons.params.positions[tostring(i)], buttons.params.sizes[buttons[tostring(i)].type].display, '', nil, false)
-                buttons[tostring(i)].plusOne = setupButton(tostring(i) .. 'PlusOne', buttons.params.positions[tostring(i)], buttons.params.sizes[buttons[tostring(i)].type].button, '', buttons.params.sizes[buttons[tostring(i)].type].offsets.bottomButtons, false)
-                buttons[tostring(i)].minusOne = setupButton(tostring(i) .. 'MinusOne', buttons.params.positions[tostring(i)], buttons.params.sizes[buttons[tostring(i)].type].button, '', buttons.params.sizes[buttons[tostring(i)].type].offsets.bottomButtons, true)
+                buttons[tostring(i)].plusOne = setupButton(tostring(i) .. 'PlusOne', buttons.params.positions[tostring(i)], buttons.params.sizes[buttons[tostring(i)].type].button, '+', buttons.params.sizes[buttons[tostring(i)].type].offsets.bottomButtons, false)
+                buttons[tostring(i)].minusOne = setupButton(tostring(i) .. 'MinusOne', buttons.params.positions[tostring(i)], buttons.params.sizes[buttons[tostring(i)].type].button, '-', buttons.params.sizes[buttons[tostring(i)].type].offsets.bottomButtons, true)
             else
                 buttons[tostring(i)].display = setupButton(tostring(i) .. 'ToggleClick', buttons.params.positions[tostring(i)], buttons.params.sizes[buttons[tostring(i)].type].display, '', nil, false)
                 buttons[tostring(i)].isToggle = true
@@ -301,6 +368,7 @@ function generateButtonParameters()
     end
 end
 
+--creates buttons
 function setupButton(targetFunc, positions, sizes, label, offsets, isLeft)
     local buttonInfo = {}
         buttonInfo.function_owner = self
@@ -332,13 +400,13 @@ function setupButton(targetFunc, positions, sizes, label, offsets, isLeft)
         buttonInfo.font_size = sizes.font
         buttonInfo.label = label
     buttons.index = buttons.index + 1
+
     return buttonInfo
 end
 
 ----------------------------------------------
 --Utility functions
 ----------------------------------------------
-
 function updateDisplay(firstTime)
     for i,v in pairs(buttons) do
         if tostring(i) != 'index' and tostring(i) != 'counts' and tostring(i) != 'params' and tostring(i) != 'targetFunc' then
@@ -356,12 +424,19 @@ function updateDisplay(firstTime)
                 if (buttons[tostring(i)].isText == true) then
                     buttons[tostring(i)].display.label = tostring(buttons.counts[tostring(i)])
                     if (objs[tostring(i)] == nil) then
-                        buttons[tostring(i)].minusOne.label = ""
+                        buttons[tostring(i)].minusOne.label = "Edit"
                     else
                         buttons[tostring(i)].minusOne.label = "Done"
                     end
                 else
+					--curnil token script
+					if i == "movement" or i == "accuracy" or i == "strength" or i == "evasion" or i == "luck" or i == "speed"then
+                        buttons[tostring(i)].display.label = tostring(buttons.counts[tostring(i)])
+                        updateStat(i)
+                    else
+					--
                     buttons[tostring(i)].display.label = tostring(buttons.counts[tostring(i)])
+					end
                 end
             end
             if (firstTime) then
@@ -373,13 +448,12 @@ function updateDisplay(firstTime)
             end
         end
     end
-	if (firstTime) then
-		self.setName(buttons.counts['__survivor_name'])
-	end
 end
+
 ---------------------------------------------
 --functions activated by button click/other
 --------------------------------------------
+
 function toggleClick(location)
 	if buttons.counts[location] > 0 then
 		buttons.counts[location] = 0
@@ -477,13 +551,6 @@ function editclick(location)
 end
 
 --------------------------
---transfer to full size
---------------------------
-function maximizeSheet()
-	self.setState(1)
-end
-
---------------------------
 --transfer for minimize
 --------------------------
 function minimizeSheet()
@@ -502,8 +569,62 @@ function minimizeSheet()
 end
 
 function transferCoroutine()
-	local object = self.setState(3)
+	local object = self.setState(2)
 	coroutine.yield(0)
     object.call('loadData', transfer_data)
 	return 1
+end
+
+--------------------------
+--save when dropped (for dropping into bags)
+--------------------------
+function onDropped()
+	local data_to_save = {}
+	data_to_save.saved_counts = {}
+	for i,v in pairs(buttons.counts) do
+		data_to_save.saved_counts[tostring(i)] = v or 0
+	end
+	saved_data = JSON.encode(data_to_save)
+	self.script_state = saved_data
+end
+
+
+
+
+---------------------------
+--Curnils token standalone script version
+---------------------------
+--Curnil's Token scripts
+function loadTokens(loadedTokens)
+    tokens = loadedTokens
+    updateDisplay(false)
+end
+
+function updateStat(stat)
+    local statIncrease = 0
+    for i,v in pairs(tokens) do
+        for j,w in pairs(v) do
+            if stat == "movement" and tostring(j) == "move" then
+                statIncrease = statIncrease + w
+            elseif stat == j then
+                statIncrease = statIncrease + w
+            end
+        end
+    end
+    buttons[stat].display.label = tostring(statIncrease + buttons.counts[stat])
+    loadComplete = true
+end
+
+function onCollisionExit(collision_info)
+    local obj = collision_info.collision_object
+    if obj.getVar("isGearGrid") then
+        -- remove the token from the tokens collection
+        tokens = {}
+        updateDisplay(false)
+    end
+end
+
+function onPickedUp()
+	tokens = {}
+	updateDisplay(false)
 end
