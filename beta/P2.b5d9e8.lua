@@ -10,25 +10,25 @@ function initCustomButtons()
 	thick = 0.14
 
 	--armor and hit locations
-	dx = -1.3; dy = -10.5; px =3.32
-	createCounter('armor_head', 'big', dx, dy); dx = dx + px + 0.1
-	createCounter('armor_body', 'big', dx, dy); dx = dx + px
-	createCounter('armor_waist', 'big', dx, dy); dx = dx + px - 0.1
-	createCounter('armor_arms', 'big', dx, dy); dx = dx + px
+    dx = 6.35; dy = -8.7; px =2.36
+	createCounter('armor_head', 'big', dx, dy); dx = dx + px + 0.15
+	createCounter('armor_body', 'big', dx, dy); dx = dx + px + 0.15
+	createCounter('armor_waist', 'big', dx, dy); dx = dx + px + 0.1
+	createCounter('armor_arms', 'big', dx, dy); dx = dx + px + 0.13
 	createCounter('armor_legs', 'big', dx, dy)
-	
-	dx = -0.2; dy = -10.45; px = 3.32; py = 0.65; ry = dy
-	createToggle('injury_head', dx, dy); dx = dx + px + 0.08; dy = dy - py
-	createToggle('injury_body_l', dx, dy); dy = ry
-	createToggle('injury_body_h', dx, dy); dx = dx + px; dy = dy - py
-	createToggle('injury_wasit_l', dx, dy); dy = ry
-	createToggle('injury_wasit_h', dx, dy); dx = dx + px -0.08; dy = dy - py
-	createToggle('injury_arms_l', dx, dy); dy = ry
-	createToggle('injury_arms_h', dx, dy); dx = dx + px; dy = dy - py
-	createToggle('injury_legs_l', dx, dy); dy = ry
+
+	dx = 6.8; dy = -7.1; px = 1.63; py = 0.65; ry = dy
+	createToggle('injury_head', dx, dy); dx = dx + px;
+	createToggle('injury_body_l', dx, dy); dx = dx + 0.85
+	createToggle('injury_body_h', dx, dy); dx = dx + px;
+	createToggle('injury_wasit_l', dx, dy); dx = dx + 0.86
+	createToggle('injury_wasit_h', dx, dy); dx = dx + px;
+	createToggle('injury_arms_l', dx, dy); dx = dx + 0.85
+	createToggle('injury_arms_h', dx, dy); dx = dx + px;
+	createToggle('injury_legs_l', dx, dy); dx = dx + 0.85
 	createToggle('injury_legs_h', dx, dy)
-	
-	dx = 12; dy = -9.5;
+
+    dx = 18; dy = -5.25;
     createResetArmor('resetArmor', dx, dy)
 	
     --if you added a location, you need to give it a position, coordinates are relative to the center of the model
@@ -53,21 +53,64 @@ function initButtonsTable()
     buttons.params.sizes = {}
     buttons.targetFunc = {}
 	
-	--make a style of button by adding a new size
-    buttons.params.sizes.big = {
-        display = {width = 0, height = 0, font = 800},
-        button = {width = 180, height = 250, font = 400},
-        offsets = { bottomButtons = {x = 0.5, y = 0, z = -0.5}, topButtons = {x = 0.1, y = 0, z = -0.17} }
-    }
-    buttons.params.sizes.toggle = {
-        display = {width = 200, height = 200, font = 300},
-        button = {width = 250, height = 250, font = 300},
+--make a style of button by adding a new size
+    buttons.params.sizes.std = {
+        display = {width = 800, height = 250, font = 130},
+        button = {width = 0, height = 0, font = 100},
         offsets = { bottomButtons = {x = 0, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
     }
-	buttons.params.sizes.std = {
-		display = {width = 800, height = 250, font = 130},
-		button = {width = 0, height = 0, font = 100},
-		offsets = { bottomButtons = {x = 0, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
+    buttons.params.sizes.mid = {
+        display = {width = 0, height = 0, font = 400},
+        button = {width = 150, height = 200, font = 200},
+        offsets = { bottomButtons = {x = 0.28, y = 0, z = -0.3}, topButtons = {x = 0.1, y = 0, z = -0.17} }
+    }
+    buttons.params.sizes.big = {
+        display = {width = 0, height = 0, font = 1000},
+        button = {width = 280, height = 280, font = 350},
+        offsets = { bottomButtons = {x = 0.44, y = 0, z = -1.66} }
+    }
+    buttons.params.sizes.small = {
+        display = {width = 0, height = 0, font = 80},
+        button = {width = 100, height = 100, font = 100},
+        offsets = { bottomButtons = {x = 0.2, y = 0, z = 0}, topButtons = {x = 0.1, y = 0, z = -0.1} }
+    }
+    buttons.params.sizes.toggle = {
+        display = {width = 280, height = 280, font = 290},
+        button = {width = 300, height = 300, font = 300},
+        offsets = { bottomButtons = {x = 0, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
+    }
+
+    buttons.params.sizes.txt = {
+        display = {width = 0, height = 0, font = 150},
+        button = {width = 300, height = 200, font = 100},
+        offsets = { bottomButtons = {x = 2, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
+    }
+
+    buttons.params.sizes.txt2 = {
+        display = buttons.params.sizes.txt.display, button = buttons.params.sizes.txt.button,
+        offsets = { bottomButtons = {x = 0, y = 0, z = -0.68}, topButtons = {x = 0, y = 0, z = 0} }
+    }
+    buttons.params.sizes.txt3 = {
+        display = buttons.params.sizes.txt.display, button = buttons.params.sizes.txt.button,
+        offsets = { bottomButtons = {x = 0, y = 0, z = -2}, topButtons = {x = 0, y = 0, z = 0} }
+    }
+	buttons.params.sizes.txt4 = {
+        display = buttons.params.sizes.txt.display, button = buttons.params.sizes.txt.button,
+        offsets = { bottomButtons = {x = 4.4, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
+    }
+	buttons.params.sizes.txt5 = {
+        display = buttons.params.sizes.txt.display, button = buttons.params.sizes.txt.button,
+        offsets = { bottomButtons = {x = 4.4, y = 0, z = 0}, topButtons = {x = 0, y = 0, z = 0} }
+    }
+    buttons.params.sizes.txtbig = {
+        display = {width = 0, height = 0, font = 300},
+        button = buttons.params.sizes.txt.button,
+        offsets = { bottomButtons = {x = 3.9, y = 0, z = -0.25}, topButtons = {x = 0, y = 0, z = 0} }
+    }
+    buttons.params.sizes.txtbig2 = {
+        display = {width = 0, height = 0, font = 300},
+        button = buttons.params.sizes.txt.button,
+        offsets = { bottomButtons = {x = 4, y = 0, z = 0}, topButtons = {x = 4, y = 0, z = 0} }
     }
 end
 

@@ -134,7 +134,7 @@ function onLoad()
 	local table = Global.getTable('staticObjs')
 	gameBoxGUID = table.gameBox.guid
 	table = Global.getTable('zones')
-	zoneSelfGUID = table.zoneStoryL.guid
+	zoneSelfGUID = table.zoneStoryT.guid
 	
 	initTabButtons()
 	initBrowseButtons()
