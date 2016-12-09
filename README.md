@@ -56,7 +56,7 @@ In order to successfully collaborate on the scripting project for KD:M for Table
  9. Once you have thoroughly debugged your scripting, and you're ready to commit your changes, they will be in the temporary "Lua" folder that was created when you imported the files from TTS with the Atom add-on.  Unless you have copied things to the repository folder, your changes aren't permanent yet.
      * Click on the first file under the "Lua" folder in the Atom file viewing window, and then shift-click on the last file in the list to select them all.  Alternately, you can just select the files you edited in your script.
      * Drag and drop them into the folder at the top of the file viewing window in Atom, that you opened earlier in Step 7.
-10. Create and submit a [well-documented Pull Request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) and be prepared to be engaged in the discussion and feedback process on the way to getting it accepted and merged into the project.
+     * Finally, create and submit a [well-documented Pull Request](https://github.com/blog/1943-how-to-write-the-perfect-pull-request) and be prepared to be engaged in the discussion and feedback process on the way to getting it accepted and merged into the project.
 
 __note__: every time you pull files from the repo and import the temporary TTS addon scripts, you will have to copy the files you pulled from Github and paste them on top of the local temporary lua files.  You must reverse this when you want to move files from the temporary local files to permanent local files, which you can commit with git and send as a pull request.
 
