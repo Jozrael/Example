@@ -1,6 +1,6 @@
 #KDM-TTS-Mod
 
-[This project](https://github.com/KDM-TTS/KDM-TTS-Mod/wiki/About-this-project/) is for the Kingdom Death: Monster mod for Tabletop Simulator.
+[This project](https://github.com/KDM-TTS/KDM-TTS-Mod/wiki) is for the Kingdom Death: Monster mod for Tabletop Simulator.
 
 Please use the [Issues](https://github.com/KDM-TTS/KDM-TTS-Mod/issues/) section to report bugs, including clear steps to reproduce the issue, or feature requests.
 
