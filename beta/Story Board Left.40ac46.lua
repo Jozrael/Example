@@ -7,19 +7,9 @@ manualsIndex = {
 	tab1 = {
 		tabName = 'Rules', 
 		pages = {
-			{pageName = 'Introduction', stateNum = 2},
-			{pageName = 'Prologue', stateNum = 5},
-			{pageName = 'First Story', stateNum = 23},
-			{pageName = 'Survival Guide', stateNum = 36},
-			{pageName = 'Survivors', stateNum = 40},
-			{pageName = 'Monsters', stateNum = 48},
-			{pageName = 'Resources', stateNum = 56},
-			{pageName = 'Terrain', stateNum = 59},
-			{pageName = 'Hunt Phase', stateNum = 61},
-			{pageName = 'Showdown Phase', stateNum = 65},
-			{pageName = 'Settlement Phase', stateNum = 79},
-			{pageName = 'Game Variants', stateNum = 85},
-			{pageName = 'Glossary', stateNum = 87},
+			{pageName = 'Glossary', stateNum = 2},
+			{pageName = 'First Story', stateNum = 10},
+			{pageName = 'Game Variants', stateNum = 23},
 		}
 	},
 	tab2 = {
@@ -115,8 +105,8 @@ manualsIndex = {
 		}
 	},
 }
-gameBoxGUID = ''
-zoneSelfGUID = ''
+gameBoxGUID = '93281a'
+zoneSelfGUID = 'df9ce3'
 
 activeBook = {}
 changingBook = false
