@@ -17,7 +17,7 @@ clearSavedData = false 		-- used to clear save data
 autoHunt = true		--allows automatic hunt deployment of objects
 autoShowdown = true 	--allows automatic showdown deployment of objects
 autoMonsterDeck = false		--not ready, keep false
-autoDeckRefresh = false		--not ready, keep false
+autoDeckRefresh = true		--not ready, keep false
 debug = false		--not ready, keep false
 devMode = false		--changes interactive for static/placeholder objects, toggles rest interactive options below
 interactBox = false 	--makes gamebox interactable if true
@@ -33,7 +33,7 @@ messages = {
 	msgBlank = '                                          ',
 	msgPageBreak = '------------------------------------------',
 	msgWelcomeTitle = 'Welcome to KINGDOM DEATH MONSTER.',
-	msgWelcomeSubtitle = "Brought to TTS by Nognoth's consortium.",
+	msgWelcomeSubtitle = "Eskander's Variant.",
 	msgSettingUpHunt1 = 'The survivors have chosen their quarry. A ',
 	msgSettingUpHunt2 = '. The survivors prepare...',
 	msgHuntIsSetup1 = 'The Hunt for the ',
@@ -46,46 +46,47 @@ messages = {
 }
 
 boards = {
-	boardHunt = {guid = 'f6a581'},
-	boardMonster = {guid = '24f67c'},
+	boardHunt = {guid = 'd5b02b'},
+	boardSettlement = {guid = 'b2be27'},
+	boardMonster = {guid = '463cb7'},
 	boardStoryL = {guid = '40ac46'},
-	boardStoryR = {guid = 'a4960e'},
-boardStoryT = {guid = ' fece67'}
+	boardStoryR = {guid = 'f459e5'},
+	boardStoryT = {guid = ' fece67'}
 }
 
 staticObjs = {
 	gameBox = {guid = '93281a'},
 	consoleAdmin = {guid = 'e00199'},
-	decorPlayerL = {guid = 'fc9c14'},
-	decorPlayerR = {guid = 'ef94c5'},
-	decorTableExtension = {guid = '12090a'},
-	decorTableEdgeD = {guid = 'ca277c'},
-	decorTableEdgeL = {guid = '32e351'},
-	decorTableEdgeR = {guid = 'f01594'},
-	decorTableEdgeU = {guid = '80e8da'},
-	decorBackPanelL = {guid = '22cf74'},
-	decorBackPanelR = {guid = 'aee909'},
-	decorBackPlanelSR = {guid = 'cfe52c'},
-	decorBackPlanelSL = {guid = '029e44'},
-	decorUpperTable1 = {guid = '1c9769'},
-	decorUpperTable2 = {guid = '0e954b'},
-	decorUpperTable3 = {guid = 'fee027'},
-	decorUpperTable4 = {guid = '053039'},
+	decorAltarLower = {guid = '111374'},
+	decorAltarTable = {guid = 'f0f68c'},
+	decorTableRaisedL = {guid = '85cdbe'},
+	decorTableRaisedR = {guid = '482e12'},
+	decorTableRaisedC = {guid = '1e9020'},
+	decorTableFront = {guid = 'ef94c5'},
 }
 
 placeholders = {
 	--essentialDecks
 	deckBasicHunt = {guid = '4e9d9e'},
 	deckSpecialHunt = {guid = '148b16'},
-	deckAbilities = {guid = '625f68'},
-	deckSecretFightingArs = {guid = 'b6c374'},
-	deckFightingArts = {guid = '515434'},
-	deckDisorders = {guid = '3a5452'},
+	deckTerrain = {guid = '51b305'},
+	deckVermin = {guid = '8c28ba'},
 	deckStrangeResources = {guid = '7aadc0'},
 	deckBasicResources = {guid = '4b6997'},
-	deckVermin = {guid = '8c28ba'},
-	deckTerrain = {guid = '51b305'},
 	deckSevereInjuries = {guid = '421db1'},
+	deckDisorders = {guid = '3a5452'},
+	deckAbilities = {guid = '625f68'},
+	deckFightingArts = {guid = '515434'},
+	deckSecretFightingArts = {guid = 'b6c374'},
+	--discards
+	discardVermin = {guid = '772088'},
+	discardStrangeResources = {guid = '215b76'},
+	discardBasicResources = {guid = '7e95eb'},
+	discardSevereInjuries = {guid = 'd510d7'},
+	discardDisorders = {guid = '48ca41'},
+	discardAbilities = {guid = '7c0b00'},
+	discardFightingArts = {guid = '456940'},
+	discardSecretFightingArts = {guid = '7b7ed5'},
 	--monsterDecks
 	deckMonsterHunt = {guid = 'e80e92'},
 	deckMonsterSpecialHunt = {guid = '1dca94'},
@@ -96,26 +97,6 @@ placeholders = {
 	deckMonsterAISpecial = {guid = 'da09a1', flip = true},
 	cardMonsterBasicAction = {guid = 'ce146d'},
 	deckMonsterHitLocations = {guid = '24cc56'},
-	--terrainspawn
-	cardTerrain1 = {guid = '15a593', flip = true},
-	cardTerrain2 = {guid = 'ec1cc4', flip = true},
-	cardTerrain3 = {guid = 'fc1740', flip = true},
-	cardTerrain4 = {guid = 'fa7080', flip = true},
-	cardTerrain5 = {guid = 'fe26f3', flip = true},
-	--huntPos
-	cardHunt1 = {guid = '5ba408', flip = true},
-	cardHunt2 = {guid = 'e17cae', flip = true},
-	cardHunt3 = {guid = '29c3c8', flip = true},
-	cardHunt4 = {guid = '0a3d67', flip = true},
-	cardHunt5 = {guid = 'b2af08', flip = true},
-	cardHunt6 = {guid = 'd32460', flip = true},
-	cardHunt7 = {guid = '9bac20', flip = true},
-	cardHunt8 = {guid = 'b344bb', flip = true},
-	cardHunt9 = {guid = 'd1549b', flip = true},
-	cardHunt10 = {guid = 'da6ad7', flip = true},
-	cardHunt11 = {guid = '9ce940', flip = true},
-	cardHunt12 = {guid = '4ac212', flip = true},
-	cardHunt13 = {guid = '5ac354', flip = true},
 }
 
 essentialDecks = {
@@ -133,25 +114,25 @@ essentialDecks = {
 		minCount = 2
 	},
 	deckAbilities = {
-		guid = '092e97',
+		guid = '7e2101',
 		name = 'Abilities Deck',
 		description = 'essential, character, abilities',
 		minCount = 45
 	},
-	deckSecretFightingArs = {
-		guid = 'd08a37',
+	deckSecretFightingArts = {
+		guid = '0553f0',
 		name = 'Secret Fighting Arts Deck',
 		description = 'essential, character, fighting art, secret',
 		minCount = 6
 	},
 	deckFightingArts = {
-		guid = '48e0af',
+		guid = '57669f',
 		name = 'Fighting Arts Deck',
 		description = 'essential, character, fighting art',
 		minCount = 20
 	},
 	deckDisorders = {
-		guid = 'bd1ee8',
+		guid = 'd3f480',
 		name = 'Disorders Deck',
 		description = 'essential, character, disorder',
 		minCount = 23
@@ -175,16 +156,44 @@ essentialDecks = {
 		minCount = 8
 	},
 	deckTerrain = {
-		guid = '4f9528',
+		guid = '280ec7',
 		name = 'Terrain Deck',
 		description = 'essential, terrain card',
 		minCount = 21
 	},
 	deckSevereInjuries = {
-		guid = '5be3e9',
+		guid = '966479',
 		name = 'Severe Injuries Deck',
 		description = 'essential, character, psi',
-		minCount = 18
+		minCount = 26
+	},
+}
+
+deckTokens = {
+	--essential deck refresh tokens
+	discardVermin = {
+		guid = '1851bd',
+	},
+	discardStrangeResources = {
+		guid = '7e1baa',
+	},
+	discardBasicResources = {
+		guid = '032768',
+	},
+	discardSevereInjuries = {
+		guid = '2a708b',
+	},
+	discardDisorders = {
+		guid = 'e9121e',
+	},
+	discardAbilities = {
+		guid = '0688ee',
+	},
+	discardFightingArts = {
+		guid = 'bf909b',
+	},
+	discardSecretFightingArts = {
+		guid = 'e2bfd3',
 	},
 }
 
@@ -220,15 +229,16 @@ monsterDecks = {
 }
 
 zones = {
-	zoneAll = {guid ='fc5df0'},
+	zoneAll = {guid =''},
 	--general areas
-	zoneMain = {guid = 'f7d522'},
-	zoneHunt = {guid = '8fdea1'},
-	zoneSettlement = {guid = '000000'},
-	zoneSurvivors = {guid = '83dc7e'},
+	zoneMain = {guid = '63aa2f'},
+	zoneHunt = {guid = '7300c1'},
+	zoneMonsterBoard = {guid = '4759fe'},
+	zoneSettlement = {guid = '7c6c54'},
+	zoneSurvivors = {guid = 'a5ff30'},
 	--specific areas
 	zoneStoryL = {guid = 'df9ce3'},
-	zoneStoryR = {guid = '7ede24'},
+	zoneStoryR = {guid = 'f44a0d'},
 	zoneStoryT = {guid = '6097d8'},
 	zoneP1 = {guid = '000000'},
 	zoneP2 = {guid = '000000'},
@@ -237,25 +247,32 @@ zones = {
 	--essential decks
 	deckBasicHunt = {guid = '9e8411'},
 	deckSpecialHunt = {guid = '9b055d'},
-	deckAbilities = {guid = 'fd06c1'},
-	deckSecretFightingArs = {guid = 'c0437f'},
-	deckFightingArts = {guid = 'ad419f'},
-	deckDisorders = {guid = '682896'},
-	deckStrangeResources = {guid = '7c3e97'},
-	deckBasicResources = {guid = '405bff'},
-	deckVermin = {guid = '5cccc8'},
 	deckTerrain = {guid = '09fd7e'},
-	deckSevereInjuries = {guid = 'b29037'}
+	deckVermin = {guid = '9e34b0'},
+	deckStrangeResources = {guid = '16853a'},
+	deckBasicResources = {guid = '76112c'},
+	deckSevereInjuries = {guid = '4c84bd'},
+	deckDisorders = {guid = '6a128c'},
+	deckAbilities = {guid = 'ceac97'},
+	deckFightingArts = {guid = '2f833d'},
+	deckSecretFightingArts = {guid = 'bd702f'},
+	--discards
+	discardVermin = {guid = '785048'},
+	discardStrangeResources = {guid = '0acd8e'},
+	discardBasicResources = {guid = '0cdada'},
+	discardSevereInjuries = {guid = 'abf02b'},
+	discardDisorders = {guid = '1cc53d'},
+	discardAbilities = {guid = 'a35982'},
+	discardFightingArts = {guid = '558b62'},
+	discardSecretFightingArts = {guid = '782b90'},
 }
 
 currentQuarryTable = {'null'}
 currentShowdownTable = {'null'}
 
 --vars
---[[ INACTIVE, placeholders used instead
-offsetXHuntCards = {-27.5,-22.92,-18.3,-13.75,-9.17,-4.58,0,4.58,9.17,13.75,18.3,22.92,27.5}
-offsetScaleHuntBoard = 0.425000429
---]]
+offsetXHuntCards = {15.6,13,10.4,7.8,5.2,2.6,0,-2.6,-5.2,-7.8,-10.4,-13,-15.6}
+offsetScaleHuntBoard = 4.23325157
 
 --tracking
 --always saved
@@ -392,15 +409,20 @@ function onLoad(saved_data)
 		end
 	end
 	--]]
-	
+
 	------------------admin move/resize zones, normally disabled
 	--[[--]]
-	local zone = getObjectFromGUID(zones.zoneAll.guid)
+	local zone = getObjectFromGUID(zones.zoneHunt.guid)
 	local pos = zone.getPosition()
 	local adjPos = zone.setPosition({pos[1], 10, pos[3]})
 	local scale = zone.getScale()
 	zone.setScale({scale[1], 20, scale[3]})
-	zone = getObjectFromGUID(zones.zoneHunt.guid)
+	--zone = getObjectFromGUID(zones.zoneAll.guid)
+	--pos = zone.getPosition()
+	--adjPos = zone.setPosition({pos[1], 10, pos[3]})
+	--scale = zone.getScale()
+	--zone.setScale({scale[1], 20, scale[3]})
+	zone = getObjectFromGUID(zones.zoneSettlement.guid)
 	pos = zone.getPosition()
 	adjPos = zone.setPosition({pos[1], 10, pos[3]})
 	scale = zone.getScale()
@@ -415,20 +437,16 @@ function onLoad(saved_data)
 	adjPos = zone.setPosition({pos[1], 10, pos[3]})
 	scale = zone.getScale()
 	zone.setScale({scale[1], 20, scale[3]})
-	zone = getObjectFromGUID(zones.zoneAll.guid)
-	pos = zone.getPosition()
-	adjPos = zone.setPosition({pos[1], 10, pos[3]})
-	scale = zone.getScale()
-	zone.setScale({scale[1], 20, scale[3]})
 	
-	
-	
+
+
+
 	-----------------load essential obj refs
 	gameBox = getObjectFromGUID(staticObjs.gameBox.guid)
 	consoleAdmin = getObjectFromGUID(staticObjs.consoleAdmin.guid)
 
 
-	
+
 	--[[deactivated
 	--update essential obj zones
 	for k,v in pairs(placeholders) do
@@ -690,7 +708,6 @@ function toggleDevMode()
 	end
 end
 
-
 function unlockStatics()
 	for k, v in pairs(staticObjs) do
 		if k != gameBox or k != consoleAdmin then
@@ -736,10 +753,10 @@ function toggleAutoMonsterDeck()
 end
 
 function toggleAutoDeckRefresh()
-	if deckRefresh == true then
-		deckRefresh = false
-	elseif deckRefresh == false then
-		deckRefresh = true
+	if autoDeckRefresh == true then
+		autoDeckRefresh = false
+	elseif autoDeckRefresh == false then
+		autoDeckRefresh = true
 	end
 end
 
@@ -867,8 +884,8 @@ end
 
 ----------------------spawn from box
 function spawnFromBox(objects, paramsOverride)
-	local dy = 0
-	local dz = 120
+local dy = 0
+	local dz = -80
 	local py = 2
 	local pz = -3
 	local params = {}
@@ -953,7 +970,7 @@ function findDeck(zone)
 	local isDeck = false
 	local obj = {}
 	local deck = {}
-	local card = {}
+	local card = nil
 	local objs = zone.getObjects()
 	for k, v in pairs(objs) do
 		if string.find(v.tag,'Deck') then
@@ -1095,16 +1112,19 @@ function reconstructEssentialDeck(deckVar, zoneVar)
 	end
 	--rename/retag deck
 	local result = findDeck(getObjectFromGUID(zones[deckVar].guid))
-	if result[2] == 'Deck' then
-		local deck = result[1]
-		if deck != nil then
-			deck.setName(essentialDecks[deckVar].name)
-			deck.setDescription(essentialDecks[deckVar].description)
-			deck.tooltip = false
-			essentialDecks[deckVar].guid = deck.getGUID()
-			reconstructed = true
+	if result != nil then
+		if result[2] == 'Deck' then
+			local deck = result[1]
+			if deck != nil then
+				deck.setName(essentialDecks[deckVar].name)
+				deck.setDescription(essentialDecks[deckVar].description)
+				deck.tooltip = false
+				essentialDecks[deckVar].guid = deck.getGUID()
+				reconstructed = true
+			end
 		end
 	end
+	
 	return reconstructed
 end
 
@@ -1135,7 +1155,7 @@ function respawnEssentialDeck(deckVar)
 end
 
 ------------------debug essential decks
-function debugEssentialDecks(deckVars)
+function debugEssentialDecks(deckVars, recall)
 	--identify bad decks
 	local checkPass = false
 	local checkedDecks = checkEssentialDecks(deckVars)
@@ -1166,33 +1186,42 @@ function debugEssentialDecks(deckVars)
 		--attempt repair
 		for k, v in pairs(badDecks) do
 			local deckVar = v
-			--printToAll(deckVar .. ' resetting...',rgbSystem)
-			local reset = resetEssentialDeck(deckVar)
-			if reset == false or reset == nil then
-				local fixed = false
-				--printToAll(deckVar .. ' reset failed...',rgbSystem)
-				--printToAll(deckVar .. ' reconstructing...',rgbSystem)
-				local reconstructed = reconstructEssentialDeck(deckVar, 'zoneMain')
-				if reconstructed == true then
-					--printToAll(deckVar .. ' reconstructed. Checksum...',rgbSystem)
-					for i=1,60 do
-						coroutine.yield(0)
+			local fixed = false
+			if recall == true then
+				--printToAll(deckVar .. ' resetting...',rgbSystem)
+				local reset = resetEssentialDeck(deckVar)
+				if reset == false or reset == nil then
+					--printToAll(deckVar .. ' reset failed...',rgbSystem)
+					--printToAll(deckVar .. ' reconstructing...',rgbSystem)
+					local reconstructed = reconstructEssentialDeck(deckVar, 'zoneMain')
+					if reconstructed == true then
+						--printToAll(deckVar .. ' reconstructed. Checksum...',rgbSystem)
+						for i=1,60 do
+							coroutine.yield(0)
+						end
+						checkSum = checkSumEssentials(essentialDecks, deckVar)
+						if checkSum == true then
+							fixed = true
+						end
+					else
+						--printToAll(deckVar .. ' reconstruct failed...',rgbSystem)
 					end
-					checkSum = checkSumEssentials(essentialDecks, deckVar)
-					if checkSum == true then
-						fixed = true
-					end
-				else
-					--printToAll(deckVar .. ' reconstruct failed...',rgbSystem)
 				end
-				if fixed == false then
-					--printToAll(deckVar .. ' respawning from archive...',rgbSystem)
-					local deck = respawnEssentialDeck(deckVar)
-					--printToAll(deckVar .. ' respawned...',rgbSystem)
+			elseif recall == false then
+				recallDiscards({deckVar})
+				for i=1, 60 do
+					coroutine.yield(0)
+				end
+				checkSum = checkSumEssentials(essentialDecks, deckVar)
+				if checkSum == true then
 					fixed = true
 				end
-			else
-				--printToAll(deckVar .. ' has reset...',rgbSystem)
+			end
+			if fixed == false then
+				--printToAll(deckVar .. ' respawning from archive...',rgbSystem)
+				local deck = respawnEssentialDeck(deckVar)
+				--printToAll(deckVar .. ' respawned...',rgbSystem)
+				fixed = true
 			end
 			--printToAll(deckVar .. ' final checksum...',rgbSystem)
 			checkSum = checkSumEssentials(essentialDecks, deckVar)
@@ -1210,6 +1239,15 @@ function debugEssentialDecks(deckVars)
 			printToAll('Repair successful.',rgbSystem)
 		end
 	end
+	
+	coroutine.yield(0)
+	
+	for k,v in pairs(deckVars) do
+		local shuffleDeck = getObjectFromGUID(essentialDecks[v].guid)
+		if shuffleDeck then
+			shuffleDeck.shuffle()
+		end
+	end
 	debuggingDecks = false
 
 	return checkPass
@@ -1219,11 +1257,93 @@ end
 ----------------------------------------------------------------
 --Features Functions
 ----------------------------------------------------------------
+recallParams = {}
+
+----------------------
+--Essential Deck Refresh
+----------------------
+function onObjectLeaveScriptingZone(zone, object)
+	if autoDeckRefresh == true then
+		if object.tag == 'Card' and string.find(object.getDescription(), 'drawn') then
+			local guid = zone.getGUID()
+			if guid == zones.deckVermin.guid or guid == zones.deckStrangeResources.guid or guid == zones.deckBasicResources.guid or guid == zones.deckSevereInjuries.guid or guid == zones.deckDisorders.guid or guid == zones.deckAbilities.guid or guid == zones.deckFightingArts.guid or guid == zones.deckSecretFightingArts.guid then
+				local discard = ''
+				local desc = object.getDescription()
+				if string.find(desc, 'vermin') then
+					discard = 'discardVermin'
+				elseif string.find(desc, 'strange') then
+					discard = 'discardStrangeResources'
+				elseif string.find(desc, 'basic') and string.find(desc, 'resource') then
+					discard = 'discardBasicResources'
+				elseif string.find(desc, 'injury') then
+					discard = 'discardSevereInjuries'
+				elseif string.find(desc, 'disorder') then
+					discard = 'discardDisorders'
+				elseif string.find(desc, 'ability') then
+					discard = 'discardAbilities'
+				elseif string.find(desc, 'fighting art') and string.find(desc, 'secret') then
+					discard = 'discardSecretFightingArts'
+				elseif string.find(desc, 'fighting art') then
+					discard = 'discardFightingArts'
+				end
+				local deck = ''
+				for k, v in pairs(zones) do
+					if guid == v.guid then
+						deck = tostring(k)
+					end
+				end
+				deck = string.gsub(deck, 'deck', 'discard')
+				if deck != '' and discard != '' then
+					if deck == discard then
+						local discardPos = {}
+						discardPos = getObjectFromGUID(placeholders[discard].guid).getPosition()
+						local params = {}
+						params.position = {discardPos[1], discardPos[2] + 2, discardPos[3]}
+						object.clone(params)
+						local token = getObjectFromGUID(deckTokens[discard].guid)
+						local rot = token.getRotation().z
+						if rot < 170 or rot > 350 then
+							table.insert(recallParams, {discard})
+							startLuaCoroutine(Global, 'recallAuto')
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+function recallAuto()
+	for i = 1, 120 do
+		coroutine.yield(0)
+	end
+	local deck = recallParams[1]
+	recallDiscards(deck)
+	table.remove(recallParams, 1)
+	return 1
+end
+	
+function recallDiscards(deck)
+	if autoDeckRefresh == true or debuggingDecks == true then
+		local deckString = deck[1]
+		local zone = getObjectFromGUID(zones[deckString].guid)
+		local result = findDeck(zone)
+		if result != nil then
+			local obj = result[1]
+			deckString = string.gsub(deckString, 'discard', 'deck')
+			local params = {}
+			local deckPos = getObjectFromGUID(placeholders[deckString].guid).getPosition()
+			params.position = {deckPos[1], deckPos[2] + 2, deckPos[3]}
+			obj.setPositionSmooth(params.position)
+			params.rotation = getObjectFromGUID(placeholders[deckString].guid).getRotation()
+			obj.setRotationSmooth(params.rotation)
+		end
+	end
+end
 
 ----------------------
 --AutoHunt
 ----------------------
-
 
 --------launcher
 function setupHunt(monsterTable)
@@ -1243,7 +1363,7 @@ function setupHunt(monsterTable)
 			else
 				huntSettingUp = true
 				if monsterResourcePlaced == true then
-					local zone = getObjectFromGUID(zones.zoneHunt.guid)
+					local zone = getObjectFromGUID(zones.zoneMain.guid)
 					cleanup('tag', zone, {conditional = 'and', criteria = {'monster', 'resource'}, exclude = {}})
 					monsterResourcePlaced = false
 				end
@@ -1277,7 +1397,7 @@ end
 function setupHuntCoroutine()
 	local huntTable = currentQuarryTable
 	local monster = huntTable.monster
-	
+
 	printToAll(messages.msgSettingUpHunt1 .. monster .. messages.msgSettingUpHunt2, rgbNarrator)
 
 	--find components to spawn
@@ -1328,24 +1448,23 @@ function setupHuntCoroutine()
 		--check essential decks
 		debuggingDecks = true
 		local essential = {'deckBasicHunt','deckSpecialHunt'}
-		local checkPass = debugEssentialDecks(essential)
+		local checkPass = debugEssentialDecks(essential, true)
 		while debuggingDecks == true do
-			coroutine.yield(1)
+			coroutine.yield(0)
 		end
 		if checkPass != true then
 			cancelHuntSetup = true
 		end
-		
-		--[[disabled until fixed
-		--reset look decks
+
+		--reset loot decks
+		debuggingDecks = true
 		local lootDecks = {'deckBasicResources','deckStrangeResources','deckVermin'}
-		local lootDeck = {}
-		for k, v in pairs(lootDecks) do
-			lootDeck = respawnEssentialDeck(v)
+		checkPass = debugEssentialDecks(lootDecks, false)
+		while debuggingDecks == true do
 			coroutine.yield(0)
 		end
-		--]]
-
+		
+		
 		--set positions for hunt cards
 		getHuntPositions()
 
@@ -1395,22 +1514,6 @@ function setupHuntCoroutine()
 	return 1
 end
 
---set hunt pos by placeholders
-function getHuntPositions()
-	huntPos = {}
-	huntRot = {}
-	for i=1, 13 do
-		local var = 'cardHunt' .. tostring(i)
-		local pos = getObjectFromGUID(placeholders[var].guid).getPosition()
-		local position = {pos[1], pos[2] + 1, pos[3]}
-		huntPos[i] = position
-		local rot = getObjectFromGUID(placeholders[var].guid).getRotation()
-		huntRot[i] = rot
-	end
-end
-
-
---[[ INACTIVE, set position by board version
 function getHuntPositions()
 	--set positions for hunt cards
 	huntPos = {}
@@ -1435,8 +1538,9 @@ function getHuntPositions()
 	end
 	for i=1, 13 do
 		huntRot[i] = {boardHunt.getRotation().x, boardHunt.getRotation().y, boardHunt.getRotation().z + 180}
+	end
 end
---]]
+
 
 ---------------place monster by level
 function placeHuntMonster()
@@ -1460,7 +1564,7 @@ function placeHuntMonster()
 		getHuntPositions()
 		local params = {}
 		params.position = huntPos[space]
-		params.rotation = {boardHunt.getRotation().x, boardHunt.getRotation().y + 180, boardHunt.getRotation().z}
+		params.rotation = {boardHunt.getRotation().x, boardHunt.getRotation().y + 90, boardHunt.getRotation().z}
 		local figurineGUID = getObj('name', gameBox, {conditional = "matches", criteria = {monster}, exclude = {}})
 		if figurineGUID == nil then
 			printToAll('The ' .. monster .. ' Figurine was not found in the box!', rgbError)
@@ -1696,7 +1800,7 @@ function placeShowdownMonster()
 	end
 	local showdownMonster = currentShowdownTable.monster
 	local params = {}
-	params.position = {-9.5,2,0}
+	params.position = {0,2,1.5}
 	params.rotation = {0,180,0}
 	if  showdownMonster == huntMonster and huntMonsterFigurine != nil then
 		--move hunt figurine to showdown
@@ -1768,10 +1872,26 @@ function generateShowdownTerrain()
 			--take cards
 			local cardsTaken = {}
 			local params = {}
+			local origin = deck.getPosition()
+			local offset = 3.6
+			local offsetTotal = offset
+			local offsets = {}
+			local offsetTrig = {}
+			local cardPos = {}
+			for i=1, 6 do
+				offsets[i] = offsetTotal
+				offsetTotal = offsetTotal + offset
+				offsetTrig[i] = trig(deck, offsets[i])
+				cardPos[i] = {origin.x - offsetTrig[i][3], origin.y - offsetTrig[i][2], origin.z - offsetTrig[i][1]}
+			end
+			local rot = deck.getRotation()
+			local pos = {}
+			local posNum = 0
 			for k, v in pairs (cardsToTake) do
-				local rot = getObjectFromGUID(placeholders.cardTerrain1.guid).getRotation()
 				params.rotation = {rot[1], rot[2], 0}
-				local pos = getObjectFromGUID(placeholders[k].guid).getPosition()
+				posNum = string.match(k, "%d")
+				posNum = tonumber(posNum)
+				pos = cardPos[posNum]
 				params.position = {pos[1], pos[2] + 2, pos[3]}
 				params.guid = v
 				cardsTaken[k] = deck.takeObject(params)
@@ -1790,14 +1910,14 @@ function generateShowdownTerrain()
 			--spawn random cards
 			local randomCount = currentShowdownTable.showdownTerrain.randomCards
 			params = {}
+			params.rotation = {rot[1], rot[2], 0}
 			for i=1, randomCount do
-				local var = 'cardTerrain' .. tostring(num)
+				posNum = num
 				num = num + 1
-				local rot = getObjectFromGUID(placeholders[var].guid).getRotation()
-				params.rotation = {rot[1], rot[2], 0}
-				local pos = getObjectFromGUID(placeholders[var].guid).getPosition()
+				posNum = tonumber(posNum)
+				pos = cardPos[posNum]
 				params.position = {pos[1], pos[2] + 2, pos[3]}
-				cardsTaken[var] = deck.takeObject(params)
+				cardsTaken[posNum] = deck.takeObject(params)
 			end
 
 				--[[ inactive
@@ -1864,6 +1984,16 @@ function cleanupShowdownCoroutine()
 	local zone = getObjectFromGUID(zones.zoneMain.guid)
 	cleanup('tag', zone, {conditional = 'and', criteria = {'terrain tile'}, exclude = {}})
 	cleanup('tag', zone, {conditional = 'and', criteria = {'monster', 'showdown'}, exclude = {'drawn'}})
+	--newly created decks
+	local zone = getObjectFromGUID(zones.zoneMonsterBoard.guid)
+	cleanup('name', zone, {conditional = 'and', criteria = {''}, exclude = {"."}})
+	local objs = zone.getObjects()
+	for k, v in pairs(objs) do
+		if v.tag == 'Deck' or string.find(v.getName(),'Token') then
+			v.destruct()
+		end
+	end
+	
 	--reset terrain deck
 	local deck = 'deckTerrain'
 	resetEssentialDeck(deck)
@@ -1875,6 +2005,8 @@ function cleanupShowdownCoroutine()
 
 	local board = getObjectFromGUID(boards.boardMonster.guid)
 	board.call('clear', nil)
+	
+	
 
 	for i=1, 60 do
 		coroutine.yield(0)

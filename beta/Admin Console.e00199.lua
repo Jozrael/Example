@@ -28,9 +28,9 @@ function onLoad()
 		label.devLabel = 'Dev Mode is OFF'
 	end
 	if Global.getVar('autoDeckRefresh') == true then
-		label.deckRefreshLabel = 'Essential Deck Refresh (INACTIVE)'
+		label.deckRefreshLabel = 'Deck Refresh is ON'
 	elseif Global.getVar('autoDeckRefresh') == false then
-		label.deckRefreshLabel = 'Essential Deck Refresh (INACTIVE)'
+		label.deckRefreshLabel = 'Deck Refresh is OFF'
 	end
 	if Global.getVar('autoMonsterDeck') == true then
 		label.monsterDeckLabel = 'Showdown Deckbuilder (INACTIVE)'
@@ -164,11 +164,11 @@ function updateLabels()
 	end
 	if Global.getVar('autoDeckRefresh') == true then
 		params.index = btns.autoDeckRefreshToggle
-		params.label = 'Essential Deck Refresh (INACTIVE)'
+		params.label = 'Deck Refresh is ON'
 		self.editButton(params)
 	elseif Global.getVar('autoDeckRefresh') == false then
 		params.index = btns.autoDeckRefreshToggle
-		params.label = 'Essential Deck Refresh (INACTIVE)'
+		params.label = 'Deck Refresh is OFF'
 		self.editButton(params)
 	end
 	if Global.getVar('autoMonsterDeck') == true then
@@ -206,7 +206,6 @@ function autoShowdownDeckBuildToggle()
 end
 
 function autoDeckRefreshToggle()
-	printToAll('Feature is not implemented.',{0.8,0,0})
 	Global.call('toggleAutoDeckRefresh')
 	updateLabels()
 end
@@ -217,13 +216,11 @@ function devModeToggle()
 end
 
 function hideConsole()
-	local params = {0,5,80}
+	local params = {50,5,-200}
 	self.setPosition(params)
 	self.interactable = false
 	self.setRotation({0,180,180})
 end
 
 function showConsole()
-
-
 end

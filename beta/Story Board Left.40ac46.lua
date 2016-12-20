@@ -5,7 +5,7 @@
 --------------------------------
 manualsIndex = {
 	tab1 = {
-		tabName = 'Rules', 
+		tabName = 'Rules',
 		pages = {
 			{pageName = 'Introduction', stateNum = 2},
 			{pageName = 'Prologue', stateNum = 5},
@@ -23,7 +23,7 @@ manualsIndex = {
 		}
 	},
 	tab2 = {
-		tabName = 'Timeline Events', 
+		tabName = 'Timeline Events',
 		pages = {
 			{pageName = 'Returning Survivors', stateNum = 2},
 			{pageName = 'Endless Screams', stateNum = 4},
@@ -37,7 +37,7 @@ manualsIndex = {
 		}
 	},
 	tab3 = {
-		tabName = 'Hunt Events', 
+		tabName = 'Hunt Events',
 		pages = {
 			{pageName = 'Random Events 1-8', stateNum = 2},
 			{pageName = 'Random Events 9-15', stateNum = 3},
@@ -58,7 +58,7 @@ manualsIndex = {
 		}
 	},
 	tab4 = {
-		tabName = 'Showdown Setups', 
+		tabName = 'Showdown Setups',
 		pages = {
 			{pageName = 'White Lion', stateNum = 2},
 			{pageName = 'Screaming Antelope', stateNum = 4},
@@ -71,7 +71,7 @@ manualsIndex = {
 		}
 	},
 	tab5 = {
-		tabName = 'Settlement Events', 
+		tabName = 'Settlement Events',
 		pages = {
 			{pageName = 'Intimacy', stateNum = 2},
 			{pageName = 'Birth of a Savior', stateNum = 4},
@@ -80,7 +80,7 @@ manualsIndex = {
 		}
 	},
 	tab6 = {
-		tabName = 'Milestone Events', 
+		tabName = 'Milestone Events',
 		pages = {
 			{pageName = 'Age', stateNum = 2},
 			{pageName = 'Bold', stateNum = 4},
@@ -95,7 +95,7 @@ manualsIndex = {
 		}
 	},
 	tab7 = {
-		tabName = 'Severe Injuries', 
+		tabName = 'Severe Injuries',
 		pages = {
 			{pageName = 'Brain Trauma', stateNum = 2},
 			{pageName = 'Head, Arms', stateNum = 3},
@@ -103,7 +103,7 @@ manualsIndex = {
 		}
 	},
 	tab8 = {
-		tabName = 'Monster Events', 
+		tabName = 'Monster Events',
 		pages = {
 			{pageName = 'Zero Presence', stateNum = 2},
 			{pageName = 'Crush and Devour', stateNum = 4},
@@ -135,7 +135,7 @@ function onLoad()
 	gameBoxGUID = table.gameBox.guid
 	table = Global.getTable('zones')
 	zoneSelfGUID = table.zoneStoryL.guid
-	
+
 	initTabButtons()
 	initBrowseButtons()
 
@@ -277,7 +277,7 @@ end
 function tab7()
 	local tab = 'tab7'
 	tabClick(tab)
-end	
+end
 
 function tab8()
 	local tab = 'tab8'
@@ -319,7 +319,7 @@ end
 function page7()
 	local page = 7
 	pageClick(page)
-end	
+end
 
 function page8()
 	local page = 8
@@ -364,7 +364,7 @@ end
 function page16()
 	local page = 16
 	pageClick(page)
-end	
+end
 
 ----------------------------------------
 --primary fcns
@@ -452,7 +452,7 @@ function changeBookCoroutine()
 			local params = {}
 			params.guid = book[1]
 			local pos = self.getPosition()
-			params.position = {pos[1]-3,pos[2] + 2,pos[3]+0.2}
+			params.position = {pos[1]-1,pos[2] + 2,pos[3]-0.2}
 			local rot = self.getRotation()
 			params.rotation = {rot[1], rot[2] + 90, rot[3]}
 			book = gameBox.takeObject(params)
